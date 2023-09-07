@@ -29,7 +29,7 @@ $headers = @{
 }
 
 # Make a GET request to fetch the file content
-$fileContent = Invoke-RestMethod $apiUrl -Method 'GET' -Headers $headers
+$fileContent = Invoke-RestMethod $apiUrl -Headers $headers
 
 # Parse and display the file content (in this case, it's assumed to be JSON)
 $jsonContent = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($fileContent.content))
