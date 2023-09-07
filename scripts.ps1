@@ -23,7 +23,7 @@ $apiUrl = "https://api.github.com/repos/$githubUsername/$sourceRepo/contents/$fi
 
 # Set the request headers with your PAT
 $headers = @{
-    Authorization = "Bearer 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"
+    Authorization = "Bearer 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"
 }
 
 # Make a GET request to fetch the file content
