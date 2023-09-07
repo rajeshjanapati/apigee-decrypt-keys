@@ -23,6 +23,8 @@ $filePath = "jsonfiles/base64_encoded_app.json"
 # Define the GitHub API URL for fetching the file content from a specific branch
 $apiUrl = "https://api.github.com/repos/$githubUsername/$sourceRepo/contents/$filePath?ref=$branchName"
 
+Write-Host $apiUrl
+
 # Set the request headers with your PAT
 $headers = @{
     Authorization = "Bearer $git_token"
