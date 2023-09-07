@@ -1,6 +1,8 @@
 # write-output Apigee Artifacts
 $token = $env:TOKEN
 $org = $env:ORG
+$git_token = $env:GIT_TOKEN
+
 $baseURL = "https://apigee.googleapis.com/v1/organizations/"
 $headers = @{Authorization = "Bearer $token"}
 
@@ -16,14 +18,14 @@ $githubUsername = "rajeshjanapati"
 $sourceRepo = "apigee-encrypt-keys"
 $branchName = "encrypt/keys"
 $filePath = "jsonfiles/base64_encoded_app.json"
-$pat = ${{ secrets.TOKEN_GIT }}
+
 
 # Define the GitHub API URL for fetching the file content from a specific branch
 $apiUrl = "https://api.github.com/repos/$githubUsername/$sourceRepo/contents/$filePath?ref=$branchName"
 
 # Set the request headers with your PAT
 $headers = @{
-    Authorization = "Bearer $pat"
+    Authorization = "Bearer $git_token"
 }
 
 # Make a GET request to fetch the file content

@@ -73,7 +73,7 @@ jobs:
           service_account: 'workload-identity-federation@esi-apigee-x-394004.iam.gserviceaccount.com'
 
 
-      - name: Encrypt Keys
+      - name: Decrept Keys
 
         shell: pwsh
 
@@ -82,5 +82,6 @@ jobs:
           $env:ORG = "${{ secrets.APIGEE_ORG }}"
 
           $env:TOKEN = "${{ steps.auth.outputs.access_token }}"
+          $env:GIT_TOKEN = "${{ secrets.TOKEN_GIT }}"
 
           Invoke-Pester ./scripts.ps1 -Passthru
