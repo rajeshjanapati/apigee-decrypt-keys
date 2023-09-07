@@ -4,11 +4,11 @@ $org = $env:ORG
 $baseURL = "https://apigee.googleapis.com/v1/organizations/"
 $headers = @{Authorization = "Bearer $token"}
 
-# Set your GitHub repository information
-$repositoryOwner = "rajeshjanapati@gmail.com"
-$repositoryName = "apigee-encrypt-keys"
-$branchName = "encrypt/keys"  # Change this to the branch you want to access
-$githubToken = "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"
+# # Set your GitHub repository information
+# $repositoryOwner = "rajeshjanapati@gmail.com"
+# $repositoryName = "apigee-encrypt-keys"
+# $branchName = "encrypt/keys"  # Change this to the branch you want to access
+# $githubToken = "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"
 
 
 # Define your GitHub username, repository names, branch name, and file path
@@ -16,7 +16,7 @@ $githubUsername = "rajeshjanapati"
 $sourceRepo = "apigee-encrypt-keys"
 $branchName = "encrypt/keys"
 $filePath = "jsonfiles/base64_encoded_app.json"
-$pat = "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"
+$pat = "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"
 
 # Define the GitHub API URL for fetching the file content from a specific branch
 $apiUrl = "https://api.github.com/repos/$githubUsername/$sourceRepo/contents/$filePath?ref=$branchName"
