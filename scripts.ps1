@@ -16,14 +16,14 @@ $githubUsername = "rajeshjanapati"
 $sourceRepo = "apigee-encrypt-keys"
 $branchName = "encrypt/keys"
 $filePath = "jsonfiles/base64_encoded_app.json"
-$pat = "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"
+$pat = ${{ secrets.TOKEN_GIT }}
 
 # Define the GitHub API URL for fetching the file content from a specific branch
 $apiUrl = "https://api.github.com/repos/$githubUsername/$sourceRepo/contents/$filePath?ref=$branchName"
 
 # Set the request headers with your PAT
 $headers = @{
-    Authorization = "Bearer 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"
+    Authorization = "Bearer $pat"
 }
 
 # Make a GET request to fetch the file content
