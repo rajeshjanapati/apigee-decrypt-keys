@@ -30,7 +30,7 @@ jobs:
 
     name: Artifacts Windows Export
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
  
 

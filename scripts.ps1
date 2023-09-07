@@ -38,6 +38,16 @@ $jsonContent = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase
 Write-Host "JSON File Content:"
 Write-Host $jsonContent
 
+# Parse the JSON content into a PowerShell object
+$jsonObject = $jsonContent | ConvertFrom-Json
+
+# Decode consumerKey and consumerSecret
+$consumerKey = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($jsonObject.credentials[0].consumerKey))
+$consumerSecret = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($jsonObject.credentials[0].consumerSecret))
+
+# Display the decoded values
+Write-Host "Decoded Consumer Key: $consumerKey"
+Write-Host "Decoded Consumer Secret: $consumerSecret"
 
 # # # Clone the repository
 # git clone https://github.com/rajeshjanapati/apigee-encrypt-keys.git
