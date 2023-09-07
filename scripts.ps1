@@ -8,7 +8,7 @@ $headers = @{Authorization = "Bearer $token"}
 $repositoryOwner = "rajeshjanapati@gmail.com"
 $repositoryName = "apigee-encrypt-keys"
 $branchName = "encrypt/keys"  # Change this to the branch you want to access
-$githubToken = "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"
+$githubToken = "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"
 
 # # Clone the repository
 git clone https://github.com/rajeshjanapati/apigee-encrypt-keys.git
