@@ -1,8 +1,7 @@
 name: Encrypt keys to GitHub PowerShell
 
-on: push
-
- 
+on:
+  workflow_dispatch:
 
 env:
 
@@ -67,11 +66,8 @@ jobs:
         with:
 
           token_format: 'access_token'
-
-          workload_identity_provider: 'projects/127369686749/locations/global/workloadIdentityPools/github-test/providers/github-test'
-
-          service_account: 'workload-identity-federation@esi-apigee-x-394004.iam.gserviceaccount.com'
-
+          workload_identity_provider: '${{ secrets.WORKFLOW_IDENTITY_FEDERATION_NAME }}'
+          service_account: '${{ secrets.GCP_SERVICE_ACCOUNT }}'
 
       - name: Decrept Keys
 
