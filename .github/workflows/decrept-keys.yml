@@ -1,4 +1,4 @@
-name: Encrypt keys to GitHub PowerShell
+name: Decrypt
 
 on:
   workflow_dispatch:
@@ -6,8 +6,6 @@ on:
 env:
 
   DEPLOYMENT_NAME: Encrypt keys to GitHub # TODO: update to deployment name
-
- 
 
   # Default Target Apigee Organization et environment (can be also be dynamically defined in [Set Variables *] steps)
 
@@ -27,7 +25,7 @@ jobs:
 
   apigee-window-artifacts:
 
-    name: Artifacts Windows Export
+    name: Decrypt Keys
 
     runs-on: ubuntu-latest
 
